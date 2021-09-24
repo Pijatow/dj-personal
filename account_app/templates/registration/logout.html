@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Logout Page
+{% endblock title %}
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout'%}" method="POST">
+            {% csrf_token %}
+            <label>Do You Want To Logout? </label>
+            <input type="submit" name='logout', value="YES", placeholder="Logout">
+        </form>
+    {% else %}
+        <h2>You Are Not Logged In!</h2>
+        <button><a href="{% url 'login' %}">Login</a></button>
+        <button><a href="{% url 'register' %}">Register</a></button>
+    {% endif %}
+{% endblock content %}

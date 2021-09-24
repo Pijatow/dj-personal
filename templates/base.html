@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django{% endblock title %}</title>
+</head>
+<body>
+    <h1 style="background-color: dimgray;">HEADER</h1>
+    <hr>
+    {% block content %}{% endblock content %}
+    <hr>
+    <h1 style="background-color: dimgray;">FOOTER</h1>
+</body>
+</html>
